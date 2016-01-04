@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Automatic">
+    <entity name="DMDepartment" representedClassName="DMDepartment" syncable="YES">
+        <attribute name="departmentID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="employees" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DMEmployee" inverseName="department" inverseEntity="DMEmployee" syncable="YES"/>
+    </entity>
+    <entity name="DMEmployee" representedClassName="DMEmployee" syncable="YES">
+        <attribute name="employeeId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="department" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DMDepartment" inverseName="employees" inverseEntity="DMDepartment" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DMDepartment" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="DMEmployee" positionX="151" positionY="-48" width="128" height="120"/>
+    </elements>
+</model>
